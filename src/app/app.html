@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="jumbotron">
+        <h1 class="text-center">Secret Santa 2017!</h1>
+    </div>
+</div>
+<div class="row row-cta">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <a ng-click="unveil()" class="btn btn-danger btn-block btn-lg" href="#" role="button">
+            Unveil matches
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+        <ul>
+            <li class="match clearfix" ng-repeat="match in matches" ng-show="matches.length > 0">
+                <div class="well col-xs-6">
+                    <div class="avatar">
+                        <img src="https://s-media-cache-ak0.pinimg.com/originals/af/25/49/af25490494d3338afef00869c59fdd37.png"
+                             alt="">
+                    </div>
+                    <h2 class="title">
+                        {{match.sender.name.first}} {{match.sender.name.last}}
+                    </h2>
+                    <ul class="contact-data">
+                        <li class="icon-item">
+                            <a href="mailto:{{match.sender.email}}">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                                <span class="hidden-xs">{{match.sender.email}}</span>
+                            </a>
+                        </li>
+                        <li class="icon-item">
+                            <a href="tel:{{match.sender.phone}}">
+                                <i class="glyphicon glyphicon-earphone"></i>
+                                <span class="hidden-xs">{{match.sender.phone}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="well col-xs-6">
+                    <div class="avatar">
+                        <img src="https://s-media-cache-ak0.pinimg.com/originals/af/25/49/af25490494d3338afef00869c59fdd37.png"
+                             alt="">
+                    </div>
+                    <h2 class="title">
+                        {{match.receiver.name.first}} {{match.receiver.name.last}}
+                    </h2>
+                    <ul class="contact-data">
+                        <li class="icon-item">
+                            <a href="mailto:{{match.receiver.email}}">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                                <span class="hidden-xs">{{match.receiver.email}}</span>
+                            </a>
+                        </li>
+                        <li class="icon-item">
+                            <a href="tel:{{match.receiver.phone}}">
+                                <i class="glyphicon glyphicon-earphone"></i>
+                                <span class="hidden-xs">{{match.receiver.phone}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
