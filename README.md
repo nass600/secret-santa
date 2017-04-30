@@ -22,15 +22,26 @@ Run the Express server by executing:
 npm start
 ```
 
-Now, you can access the app by typing `localhost:3000` in the browser.
+Now, you can access the app by typing `http://localhost:3000` in the browser.
 
 **Note:** Change the url if you are using vagrant or custom localhost setups
 
 
+Usage
+-----
+
+Run tests by executing:
+
+```bash
+npm test
+```
+
 Todo
 ----
 
-- [ ] Move css to sass
-- [ ] Remove CDNs and use NPM to handle all dependencies
-- [ ] Use webpack to minimize and mangle the output
-- [ ] Use eslint and stylelint
+- [X] Move css to sass
+- [X] Remove CDNs and use NPM to handle all dependencies
+- [X] Use webpack to minimize and mangle the output
+- [X] Use eslint and stylelint
+- [X] Add unit tests
+- [ ] Add e2e tests

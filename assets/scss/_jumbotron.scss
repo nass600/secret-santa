@@ -1,0 +1,27 @@
+// Jumbotron
+// -------------------------------
+
+.container-fluid .jumbotron {
+  min-height: 28rem;
+  position: relative;
+  margin: 0;
+  border-radius: 0;
+  background: url($jumbotron-image) center bottom rgba(0, 0, 0, 0.5);
+  background-size: cover;
+}
+
+.container-fluid .jumbotron .content {
+  text-align: center;
+  min-width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: white;
+
+  img {
+    max-width: 160px;
+    height: auto;
+  }
+}

@@ -1,0 +1,32 @@
+// Variables
+// -------------------------------
+
+// Icons
+
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+$simple-line-font-path: "~simple-line-icons/fonts/";
+$simple-line-icon-prefix: "sl-";
+
+// Fonts
+
+$font-family-base: 'Maven Pro', sans-serif;
+$font-size-base: 16px;
+
+// Buttons
+
+$btn-border-radius-large: 0;
+
+// Jumbotron
+
+$jumbotron-image: '../img/bg.jpg';
+$jumbotron-heading-font-size:    ceil(($font-size-base * 3));
+
+// Colors
+
+$brand-primary: #217f99;
+
+// Wells
+
+$well-bg: #e3e3e3;
+$well-border: $well-bg;

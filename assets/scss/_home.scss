@@ -1,0 +1,178 @@
+// Home
+// -------------------------------
+
+// Row call to action
+
+.row-cta {
+  padding: 2rem;
+  background-color: $gray-dark;
+}
+
+.welcome {
+  padding: 1rem;
+  text-align: center;
+  max-width: 70%;
+  margin: 4rem auto;
+  font-size: $font-size-large;
+
+  .title {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .icon {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  i {
+    font-size: $font-size-h1 * 1.5;
+  }
+}
+
+.list-match {
+  margin-bottom: 3rem;
+}
+
+.match {
+  position: relative;
+}
+
+.match .well {
+  border-radius: 0;
+  position: relative;
+  margin-top: 8rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  box-shadow: none;
+
+  &:last-child {
+    border-left: 0;
+    background-color: lighten($well-bg, 7%);
+
+    &::after {
+      $size: 5rem;
+
+      font-family: 'simple-line-icons';
+      content: "\e606";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      width: $size;
+      height: $size;
+      z-index: 1000;
+      background-color: $brand-primary;
+      color: white;
+      font-size: 2.5rem;
+      padding: 0.75rem;
+    }
+  }
+}
+
+.match .well {
+  .avatar {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+      width: 6.25rem;
+      height: auto;
+    }
+  }
+
+  .title {
+    margin-bottom: 2rem;
+    color: $brand-primary;
+  }
+
+  .contact-data li {
+    margin-top: 1rem;
+
+    a {
+      display: block;
+    }
+
+    i {
+      color: #217f99;
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .welcome .icon {
+    i {
+      font-size: $font-size-h1;
+    }
+  }
+
+  .match .well {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    &:last-child::after {
+      $size: 3.4rem;
+
+      width: $size;
+      height: $size;
+      font-size: 1.7rem;
+      padding: 0.5rem;
+    }
+  }
+
+  .match .well {
+    .avatar img {
+      width: 5rem;
+      height: auto;
+    }
+
+    h2 {
+      min-height: 52px;
+    }
+
+    .contact-data {
+      li {
+        display: inline-block;
+        margin-top: 0;
+
+        a {
+          @include transition(all 0.5s ease);
+
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          background-color: transparent;
+          position: relative;
+
+          &:hover {
+            background-color: $brand-primary;
+
+            i {
+              color: white;
+            }
+          }
+        }
+
+        i {
+          @include transition(all 0.5s ease);
+
+          font-size: 2rem;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      li + li {
+        margin-left: 2rem;
+      }
+    }
+  }
+}

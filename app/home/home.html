@@ -1,23 +1,40 @@
 <div class="row">
     <div class="jumbotron">
-        <h1 class="text-center">Secret Santa 2017!</h1>
+        <div class="content">
+            <img src="../../assets/img/secret-santa.png" alt="Secret Santa">
+            <h1 class="text-center">Secret Santa {{ home.year }}!</h1>
+        </div>
     </div>
 </div>
 <div class="row row-cta">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <a ng-click="unveil()" class="btn btn-danger btn-block btn-lg" href="#" role="button">
-            Unveil matches
+        <a ng-click="home.generateMatches()" class="btn btn-primary btn-block btn-lg icon-item" href="#" role="button">
+            <i class="sl-refresh"></i>
+            <span>Generate matches</span>
         </a>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12 col-md-10 col-md-offset-1">
-        <ul>
-            <li class="match clearfix" ng-repeat="match in matches" ng-show="matches.length > 0">
+        <div class="alert alert-danger" ng-if="home.error">
+            {{ home.error }}
+        </div>
+        <div class="welcome" ng-if="home.matches.length === 0">
+            <h2 class="title text-primary">Welcome to Secret Santa App!!</h2>
+            Hit the above button to generate the list of matches of this year.
+            The person on the left is the one sending the gift to the person on the left.
+            You can hit the button as many times you want until you are happy with the generated
+            <br>
+            Happy gifting!!
+            <span class="icon">
+                <i class="sl-present text-primary"></i>
+            </span>
+        </div>
+        <ul class="list-match" ng-if="home.matches.length > 0">
+            <li class="match clearfix" ng-repeat="match in home.matches">
                 <div class="well col-xs-6">
                     <div class="avatar">
-                        <img src="https://s-media-cache-ak0.pinimg.com/originals/af/25/49/af25490494d3338afef00869c59fdd37.png"
-                             alt="">
+                        <img src="../../assets/img/avatar.png" alt="{{match.sender.name.first}} {{match.sender.name.last}}">
                     </div>
                     <h2 class="title">
                         {{match.sender.name.first}} {{match.sender.name.last}}
@@ -25,13 +42,13 @@
                     <ul class="contact-data">
                         <li class="icon-item">
                             <a href="mailto:{{match.sender.email}}">
-                                <i class="glyphicon glyphicon-envelope"></i>
+                                <i class="sl-envelope"></i>
                                 <span class="hidden-xs">{{match.sender.email}}</span>
                             </a>
                         </li>
                         <li class="icon-item">
                             <a href="tel:{{match.sender.phone}}">
-                                <i class="glyphicon glyphicon-earphone"></i>
+                                <i class="sl-phone"></i>
                                 <span class="hidden-xs">{{match.sender.phone}}</span>
                             </a>
                         </li>
@@ -39,8 +56,7 @@
                 </div>
                 <div class="well col-xs-6">
                     <div class="avatar">
-                        <img src="https://s-media-cache-ak0.pinimg.com/originals/af/25/49/af25490494d3338afef00869c59fdd37.png"
-                             alt="">
+                        <img src="../../assets/img/avatar.png" alt="{{match.sender.name.first}} {{match.sender.name.last}}">
                     </div>
                     <h2 class="title">
                         {{match.receiver.name.first}} {{match.receiver.name.last}}
@@ -48,13 +64,13 @@
                     <ul class="contact-data">
                         <li class="icon-item">
                             <a href="mailto:{{match.receiver.email}}">
-                                <i class="glyphicon glyphicon-envelope"></i>
+                                <i class="sl-envelope"></i>
                                 <span class="hidden-xs">{{match.receiver.email}}</span>
                             </a>
                         </li>
                         <li class="icon-item">
                             <a href="tel:{{match.receiver.phone}}">
-                                <i class="glyphicon glyphicon-earphone"></i>
+                                <i class="sl-phone"></i>
                                 <span class="hidden-xs">{{match.receiver.phone}}</span>
                             </a>
                         </li>
